@@ -11,3 +11,12 @@ body {
     color: #000000;
     background-color: lightgrey;
 }
+
+.pane{
+    display: inline;
+    float: left;
+}
+
+#attribution {
+    font: 10pt Times;
+}

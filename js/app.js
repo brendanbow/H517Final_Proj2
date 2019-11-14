@@ -1,33 +1,54 @@
 //to do
 
-var body = document.getElementById('humanAnatomy');
-
-
-$(document).on('click', '#humanInner', function (e) {
-    var t = e.target
-    var x = e.clientX
-    var y = e.clientY
-    var target = (t == svg ? svg : t.parentNode)
-    var pin = pinCenter(target, x, y)
-    var newCircIdParam = "newcircle" + Math.round(pin.x) + '-' + Math.round(pin.y)
-    var circle = document.createElementNS(NS, 'circle');
-    
-    console.log("the quick brown fox")
-
-});
-
-function pinCenter(element, x, y) {
-    var pt = svg.createSVGPoint();
-    pt.x = x;
-    pt.y = y;
-    return pt.matrixTransform(element.getScreenCTM().inverse());
+window.onload = function () {
+    addListeners()
 }
 
-$(document).on('click', '.newcircle', function () {
-    alert("x: " + $(this).data('x') + " y: " + $(this).data("y"));
-});
-btnConfirmCancel.click(function () {
-    $("#humanInner + .newcircle").remove();
-    pinConfirm.hide();
-});
-F
+function addListeners() {
+
+    console.log("here");
+    var body = document.getElementById('humanInner');
+    var skin = document.getElementById('skin');
+    var brain = document.getElementById('brain');
+    var lungs = document.getElementById('lungs');
+    var stomach = document.getElementById('stomach');
+    var liver = document.getElementById('liver');
+    var kidney = document.getElementById('kidney');
+    var breast = document.getElementById('breast');
+    var colon = document.getElementById('colon');
+    var testes = document.getElementById('testes');
+    
+    
+    body.addEventListener('click', function (e) {
+        //console.log("this is the body");
+    });
+    skin.addEventListener('click', function (e) {
+        console.log("this is the skin");
+    });
+    brain.addEventListener('click', function (e) {
+        console.log("this is the brain");
+    });
+    lungs.addEventListener('click', function (e) {
+        console.log("this is the lungs");
+    });
+    stomach.addEventListener('click', function (e) {
+        console.log("this is the stomach");
+    });
+    liver.addEventListener('click', function (e) {
+        console.log("this is the liver");
+    });
+    kidney.addEventListener('click', function (e) {
+        console.log("this is the kidney");
+    });
+    breast.addEventListener('click', function (e) {
+        console.log("this is the breast");
+    });
+    colon.addEventListener('click', function (e) {
+        console.log("this is the colon");
+    });
+    testes.addEventListener('click', function (e) {
+        console.log("this is the testes");
+    });
+
+
+}
