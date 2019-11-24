@@ -2,11 +2,14 @@
 
 window.onload = function () {
     addListeners();
+    d3.csv("data/COAD_top_genes.csv", function (data) {
+        window.coad = data;
+    });
 }
 
 function addListeners() {
 
-    console.log("here");
+   
     var body = document.getElementById('humanInner');
     var skin = document.getElementById('skin');
     var brain = document.getElementById('brain');
@@ -24,45 +27,48 @@ function addListeners() {
         //console.log("this is the body");
     });
     skin.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the skin"
+        infobox.innerHTML = "this is the skin";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "5");
     });
     brain.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the brain"
+        infobox.innerHTML = "this is the brain";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
     });
     lungs.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the lungs"
+        infobox.innerHTML = "this is the lungs";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     stomach.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the stomach"
+        infobox.innerHTML = "this is the stomach";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     liver.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the infobox"
+        infobox.innerHTML = "this is the infobox";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     kidney.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the kidney"
+        infobox.innerHTML = "this is the kidney";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     breast.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the breast"
+        infobox.innerHTML = "this is the breast";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     colon.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the colon"
+        infobox.innerHTML = "this is the colon. The top cancer-related genes are:";
+        genes = Object.keys(coad[0])
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
-
+        for (i = 1; i < genes.length; i++) {
+            infobox.innerHTML += "<br>&emsp;&emsp;" + genes[i];
+        }
     });
     testes.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the testes"
+        infobox.innerHTML = "this is the testes";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "20");
 
     });
@@ -76,46 +82,46 @@ function addListeners() {
         //console.log("this is the body");
     });
     skin.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
+        infobox.innerHTML = "this is the infobox";
         d3.select(this).attr("stroke", "none");
     });
     brain.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
+        infobox.innerHTML = "this is the infobox";
         d3.select(this).attr("stroke", "none");
     });
     lungs.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
+        infobox.innerHTML = "this is the infobox";
         d3.select(this).attr("stroke", "none");
 
     });
     stomach.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
-        d3.select(this).attr("stroke", "none");
+        infobox.innerHTML = "this is the infobox";
+        d3.select(this).attr("stroke", "green").attr("stroke-width", "15");
 
     });
     liver.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
-        d3.select(this).attr("stroke", "none");
+        infobox.innerHTML = "this is the infobox";
+        d3.select(this).attr("stroke", "orange").attr("stroke-width", "15");
 
     });
     kidney.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
-        d3.select(this).attr("stroke", "none");
+        infobox.innerHTML = "this is the infobox";
+        d3.select(this).attr("stroke", "red").attr("stroke-width", "15");
 
     });
     breast.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
+        infobox.innerHTML = "this is the infobox";
         d3.select(this).attr("stroke", "hotpink").attr("stroke-width", "15");
 
     });
     colon.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
-        d3.select(this).attr("stroke", "none");
+        infobox.innerHTML = "this is the infobox";
+        d3.select(this).attr("stroke", "brown").attr("stroke-width", "10");
 
     });
     testes.addEventListener('mouseleave', function (e) {
-        infobox.innerHTML = "this is the infobox"
-        d3.select(this).attr("stroke", "none");
+        infobox.innerHTML = "this is the infobox";
+        d3.select(this).attr("stroke", "blue").attr("stroke-width", "15");
 
     });
 
