@@ -19,7 +19,7 @@ function addListeners() {
     var kidney = document.getElementById('kidney');
     var breast = document.getElementById('breast');
     var colon = document.getElementById('colon');
-    var testes = document.getElementById('testes');
+    var prostate = document.getElementById('prostate');
     var infobox = document.getElementById('infobox');
 
 
@@ -60,15 +60,15 @@ function addListeners() {
 
     });
     colon.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the colon. The top cancer-related genes are:";
+        infobox.innerHTML = "this is the colon. <br> The top cancer-related genes are:";
         genes = Object.keys(coad[0])
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
         for (i = 1; i < genes.length; i++) {
             infobox.innerHTML += "<br>&emsp;&emsp;" + genes[i];
         }
     });
-    testes.addEventListener('mouseenter', function (e) {
-        infobox.innerHTML = "this is the testes";
+    prostate.addEventListener('mouseenter', function (e) {
+        infobox.innerHTML = "this is the prostate";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "20");
 
     });
@@ -119,7 +119,7 @@ function addListeners() {
         d3.select(this).attr("stroke", "brown").attr("stroke-width", "10");
 
     });
-    testes.addEventListener('mouseleave', function (e) {
+    prostate.addEventListener('mouseleave', function (e) {
         infobox.innerHTML = "this is the infobox";
         d3.select(this).attr("stroke", "blue").attr("stroke-width", "15");
 
