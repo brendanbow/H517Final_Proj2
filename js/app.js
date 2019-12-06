@@ -2,7 +2,7 @@
 
 window.onload = function () {
     addListeners();
-    d3.csv("data/COAD_top_genes.csv", function (data) {
+    d3.csv("data/TopGenes/COAD_top_genes.csv", function (data) {
         window.coad = data;
     });
 }
