@@ -21,3 +21,22 @@ body {
 #attribution {
     font: 10pt Times;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 72%;
+}
+
+.label {
+    font: 6pt Arial;
+    fill: black;
+    text-align: center;
+}
+
+.plot {
+    display: inline;
+    float: left;
+    overflow:visible;
+    padding: 5px
+}

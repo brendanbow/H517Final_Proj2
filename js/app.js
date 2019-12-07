@@ -1,5 +1,5 @@
 //to do
-
+var d3;
 var topBrcaGenes, topCoadGenes, topGbmGenes, topKircGenes, topLihcGenes, topStadGenes, topPradGenes;
 var brcaData = [], coadData = [], gbmData = [], kircData = [], lihcData = [], stadData = [], pradData = [];
 
@@ -14,7 +14,7 @@ window.onload = function () {
             brcaData.push(topBrcaGenes[i] = {gene: topBrcaGenes[i], data: []});
             for (j = 0; j < brca.length; j++) {
                 current = topBrcaGenes[i].gene;
-                brcaData[i].data.push(brca[j][current]);
+                brcaData[i].data.push(parseFloat(brca[j][current]));
             }
         }
     });
@@ -26,7 +26,7 @@ window.onload = function () {
             coadData.push(topCoadGenes[i] = {gene: topCoadGenes[i], data: []});
             for (j = 0; j < coad.length; j++) {
                 current = topCoadGenes[i].gene;
-                coadData[i].data.push(coad[j][current]);
+                coadData[i].data.push(parseFloat(coad[j][current]));
             }
         }
     });
@@ -38,7 +38,7 @@ window.onload = function () {
             gbmData.push(topGbmGenes[i] = {gene: topGbmGenes[i], data: []});
             for (j = 0; j < gbm.length; j++) {
                 current = topGbmGenes[i].gene;
-                gbmData[i].data.push(gbm[j][current]);
+                gbmData[i].data.push(parseFloat(gbm[j][current]));
             }
         }
     });
@@ -50,7 +50,7 @@ window.onload = function () {
             kircData.push(topKircGenes[i] = {gene: topKircGenes[i], data: []});
             for (j = 0; j < kirc.length; j++) {
                 current = topKircGenes[i].gene;
-                kircData[i].data.push(kirc[j][current]);
+                kircData[i].data.push(parseFloat(kirc[j][current]));
             }
         }
     });
@@ -62,7 +62,7 @@ window.onload = function () {
             lihcData.push(topLihcGenes[i] = {gene: topLihcGenes[i], data: []});
             for (j = 0; j < lihc.length; j++) {
                 current = topLihcGenes[i].gene;
-                lihcData[i].data.push(lihc[j][current]);
+                lihcData[i].data.push(parseFloat(lihc[j][current]));
             }
         }
     });
@@ -74,7 +74,7 @@ window.onload = function () {
             stadData.push(topStadGenes[i] = {gene: topStadGenes[i], data: []});
             for (j = 0; j < stad.length; j++) {
                 current = topStadGenes[i].gene;
-                stadData[i].data.push(stad[j][current]);
+                stadData[i].data.push(parseFloat(stad[j][current]));
             }
         }
     });
@@ -86,11 +86,11 @@ window.onload = function () {
             pradData.push(topPradGenes[i] = {gene: topPradGenes[i], data: []});
             for (j = 0; j < prad.length; j++) {
                 current = topPradGenes[i].gene;
-                pradData[i].data.push(prad[j][current]);
+                pradData[i].data.push(parseFloat(prad[j][current]));
             }
         }
     });
-}
+};
 
 function addListeners() {
 
@@ -114,11 +114,14 @@ function addListeners() {
     skin.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the skin";
-        d3.select(this).attr("stroke", "gold").attr("stroke-width", "5");
     });
     brain.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the brain";
+        for (i = 0; i < gbmData.length; i++) {
+            console.log(gbmData[i]);
+            drawGeneDistro(gbmData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
     });
     lungs.addEventListener('click', function (e) {
@@ -130,42 +133,66 @@ function addListeners() {
     stomach.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the stomach";
+        for (i = 0; i < stadData.length; i++) {
+            console.log(stadData[i]);
+            drawGeneDistro(stadData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     liver.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the liver";
+        for (i = 0; i < lihcData.length; i++) {
+            console.log(lihcData[i]);
+            drawGeneDistro(lihcData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     kidney.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the kidney";
+        for (i = 0; i < kircData.length; i++) {
+            console.log(kircData[i]);
+            drawGeneDistro(kircData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     breast.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the breast";
+        for (i = 0; i < brcaData.length; i++) {
+            console.log(brcaData[i]);
+            drawGeneDistro(brcaData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     colon.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the " + "colon" + "<br> The top cancer-related genes are:";
+        infobox.innerHTML = "this is the colon";
+        for (i = 0; i < coadData.length; i++) {
+            console.log(coadData[i]);
+            drawGeneDistro(coadData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
     });
     prostate.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "this is the prostate";
+        for (i = 0; i < pradData.length; i++) {
+            console.log(pradData[i]);
+            drawGeneDistro(pradData[i]);
+        };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "20");
 
     });
-  
+
 }
 
-function clearHighlight(){
+function clearHighlight() {
     infobox.innerHTML = "";
     d3.select(skin).attr("stroke", "none");
     d3.select(brain).attr("stroke", "none");
@@ -179,9 +206,9 @@ function clearHighlight(){
 
 }
 
-function drawGeneDistro() {
+function drawGeneDistro(cancer) {
     // set the dimensions and margins of the graph
-    var margin = {top: 10, right: 10, bottom: 10, left: 20},
+    var margin = {top: 10, right: 10, bottom: 10, left: 40},
             width = 100 - margin.left - margin.right,
             height = 200 - margin.top - margin.bottom;
 
@@ -190,34 +217,37 @@ function drawGeneDistro() {
             .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
-            .attr("class","pane")
+            .attr("class", "plot")
+            //.attr("class", "label")
             .append("g")
             .attr("transform",
                     "translate(" + margin.left + "," + margin.top + ")");
 
-// create dummy data
-    var data = [12, 19, 11, 13, 12, 22, 13, 4, 15, 16, 18, 19, 20, 12, 11, 9]
+// create data
+    var data = cancer.data;
 
 // Compute summary statistics used for the box:
-    var data_sorted = data.sort(d3.ascending)
-    var q1 = d3.quantile(data_sorted, .25)
-    var median = d3.quantile(data_sorted, .5)
-    var q3 = d3.quantile(data_sorted, .75)
-    var interQuantileRange = q3 - q1
-    var min = q1 - 1.5 * interQuantileRange
-    var max = q1 + 1.5 * interQuantileRange
-    var axismin = q1 - 1.75 * interQuantileRange
-    var axismax = q1 + 1.75 * interQuantileRange
-
+    var data_sorted = data.sort(d3.ascending);
+    console.log(data_sorted);
+    var q1 = d3.quantile(data_sorted, .25);
+    var median = d3.quantile(data_sorted, .5);
+    var q3 = d3.quantile(data_sorted, .75);
+    var interQuantileRange = q3 - q1;
+    var min = data_sorted[0]; //q1 - 1.5 * interQuantileRange;
+    var max = q1 + 1.5 * interQuantileRange; //data_sorted[data_sorted.length-1];
+    var axismin = q1 - 1.75 * interQuantileRange;
+    var axismax = q1 + 1.75 * interQuantileRange;
+    console.log(min, max)
 // Show the Y scale
     var y = d3.scaleLinear()
-            .domain([axismin, axismax])
+            .domain([min, axismax])
+            // .domain([0, 30000])
             .range([height, 0]);
-    svg.call(d3.axisLeft(y))
+    svg.call(d3.axisLeft(y));
 
 // a few features for the box
-    var center = 25
-    var width = 25
+    var center = 25;
+    var width = 25;
 
 // Show the main vertical line
     svg
@@ -226,7 +256,7 @@ function drawGeneDistro() {
             .attr("x2", center)
             .attr("y1", y(min))
             .attr("y2", y(max))
-            .attr("stroke", "black")
+            .attr("stroke", "black");
 
 // Show the box
     svg
@@ -236,7 +266,7 @@ function drawGeneDistro() {
             .attr("height", (y(q1) - y(q3)))
             .attr("width", width)
             .attr("stroke", "black")
-            .style("fill", "#69b3a2")
+            .style("fill", "#69b3a2");
 
 // show median, min and max horizontal lines
     svg
@@ -247,11 +277,21 @@ function drawGeneDistro() {
             .attr("x1", center - width / 2)
             .attr("x2", center + width / 2)
             .attr("y1", function (d) {
-                return(y(d))
+                return(y(d));
             })
             .attr("y2", function (d) {
-                return(y(d))
+                return(y(d));
             })
-            .attr("stroke", "black")
+            .attr("stroke", "black");
+
+
+// label
+    svg.append("text")
+            .attr("transform",
+                    "translate(" + ((width  + 20)/ 2) + " ," +
+                    (height - margin.top + 25) + ")")
+            .attr("class", "label")
+            .style("text-anchor", "middle")
+            .text(cancer.gene);
 
 }
