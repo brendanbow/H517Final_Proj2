@@ -15,6 +15,7 @@ body {
 .pane{
     display: inline;
     float: left;
+    overflow:visible;
 }
 
 #attribution {
