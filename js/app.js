@@ -123,6 +123,8 @@ function addListeners() {
             drawGeneDistro(gbmData[i]);
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
+
+        plots("TCGA-GBM");
     });
     lungs.addEventListener('click', function (e) {
         clearHighlight();
@@ -139,6 +141,7 @@ function addListeners() {
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
+        plots("TCGA-STAD");
     });
     liver.addEventListener('click', function (e) {
         clearHighlight();
@@ -149,6 +152,7 @@ function addListeners() {
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
+        plots("TCGA-LIHC");
     });
     kidney.addEventListener('click', function (e) {
         clearHighlight();
@@ -159,6 +163,7 @@ function addListeners() {
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
+        plots("TCGA-KIRC");
     });
     breast.addEventListener('click', function (e) {
         clearHighlight();
@@ -169,6 +174,7 @@ function addListeners() {
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
+        plots("TCGA-BRCA");
     });
     colon.addEventListener('click', function (e) {
         clearHighlight();
@@ -178,6 +184,8 @@ function addListeners() {
             drawGeneDistro(coadData[i]);
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
+
+        plots("TCGA-COAD");
     });
     prostate.addEventListener('click', function (e) {
         clearHighlight();
@@ -188,6 +196,7 @@ function addListeners() {
         };
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "20");
 
+        plots("TCGA-PRAD");
     });
 
 }
