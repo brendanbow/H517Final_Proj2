@@ -13,6 +13,7 @@ and open the template in the editor.
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <script src="https://d3js.org/d3.v4.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/plots.js"></script>
     </head>
     <body>
         <div class="header">
@@ -429,6 +430,19 @@ and open the template in the editor.
 
         <div>
             <div id="infobox" class="container">
+            </div>
+            <br><br>
+            <div id="clinicalbox" class="container">
+                  <div class = "row">
+                        <svg id="clinicalbox_svg"></svg>
+                        <svg id="clinicalpie_svg"></svg>
+                        <svg id="clinicalpierace_svg"></svg>
+                  </div>
+                  <div class = "row">
+                        <svg id="clinicalboxtumor_svg"></svg>
+                        <svg id="clinicalpievital_svg"></svg>
+                        <svg id="clinicalpiemalign_svg"></svg>
+                  </div>
             </div>
         </div>
 
