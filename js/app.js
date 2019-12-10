@@ -240,7 +240,7 @@ function drawGeneDistro(cancer) {
     console.log(min, max)
 // Show the Y scale
     var y = d3.scaleLinear()
-            .domain([min, axismax])
+            .domain([0, axismax])
             // .domain([0, 30000])
             .range([height, 0]);
     svg.call(d3.axisLeft(y));
