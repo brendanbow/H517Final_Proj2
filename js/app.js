@@ -113,11 +113,11 @@ function addListeners() {
     });
     skin.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the skin";
+        infobox.innerHTML = "Melanoma data not available.";
     });
     brain.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the brain";
+        infobox.innerHTML = "Upregulated genes in Glioblastoma Multiforme";
         for (i = 0; i < gbmData.length; i++) {
             console.log(gbmData[i]);
             drawGeneDistro(gbmData[i]);
@@ -128,13 +128,13 @@ function addListeners() {
     });
     lungs.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the lungs";
+        infobox.innerHTML = "Upregulated genes in Lung Adenocarcinoma";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     stomach.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the stomach";
+        infobox.innerHTML = "Upregulated genes in Stomach Adenocarcinoma";
         for (i = 0; i < stadData.length; i++) {
             console.log(stadData[i]);
             drawGeneDistro(stadData[i]);
@@ -145,7 +145,7 @@ function addListeners() {
     });
     liver.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the liver";
+        infobox.innerHTML = "Upregulated genes in Liver Hepatocellular Carcinoma";
         for (i = 0; i < lihcData.length; i++) {
             console.log(lihcData[i]);
             drawGeneDistro(lihcData[i]);
@@ -156,7 +156,7 @@ function addListeners() {
     });
     kidney.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the kidney";
+        infobox.innerHTML = "Upregulated genes in Kidney Renal Clear Cell Carcinoma";
         for (i = 0; i < kircData.length; i++) {
             console.log(kircData[i]);
             drawGeneDistro(kircData[i]);
@@ -167,7 +167,7 @@ function addListeners() {
     });
     breast.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the breast";
+        infobox.innerHTML = "Upregulated genes in Breast Invasive Carcinoma";
         for (i = 0; i < brcaData.length; i++) {
             console.log(brcaData[i]);
             drawGeneDistro(brcaData[i]);
@@ -178,7 +178,7 @@ function addListeners() {
     });
     colon.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the colon";
+        infobox.innerHTML = "Upregulated genes in Colon Adenocarcinoma";
         for (i = 0; i < coadData.length; i++) {
             console.log(coadData[i]);
             drawGeneDistro(coadData[i]);
@@ -189,7 +189,7 @@ function addListeners() {
     });
     prostate.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "this is the prostate";
+        infobox.innerHTML = "Upregulated genes in Prostate Adenocarcinoma";
         for (i = 0; i < pradData.length; i++) {
             console.log(pradData[i]);
             drawGeneDistro(pradData[i]);
