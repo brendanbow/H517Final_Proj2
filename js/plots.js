@@ -2,7 +2,7 @@ function plots(key){
 
 	d3.csv("data/Compendium_Clinical.csv", function (data) {
         d3.selectAll(".remove1").remove();
-        let age = [20,40,60,80,100,120];
+        let age = [0,20,40,60,80,100];
         let tempList = [];
         let count = [0,0,0,0,0];
         let maleCount  = 0;
