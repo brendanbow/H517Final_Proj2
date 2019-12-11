@@ -106,6 +106,7 @@ function addListeners() {
     colon = document.getElementById('colon');
     prostate = document.getElementById('prostate');
     infobox = document.getElementById('infobox');
+    label = document.getElementById('label');
 
 
     body.addEventListener('click', function (e) {
@@ -117,83 +118,91 @@ function addListeners() {
     });
     brain.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Glioblastoma Multiforme";
+        label.innerHTML = "Upregulated genes in Glioblastoma Multiforme";
         for (i = 0; i < gbmData.length; i++) {
             console.log(gbmData[i]);
             drawGeneDistro(gbmData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
         plots("TCGA-GBM");
     });
     lungs.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Lung Adenocarcinoma";
+        infobox.innerHTML = "";
+        label.innerHTML = "";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });
     stomach.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Stomach Adenocarcinoma";
+        label.innerHTML = "Upregulated genes in Stomach Adenocarcinoma";
         for (i = 0; i < stadData.length; i++) {
             console.log(stadData[i]);
             drawGeneDistro(stadData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
         plots("TCGA-STAD");
     });
     liver.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Liver Hepatocellular Carcinoma";
+        label.innerHTML = "Upregulated genes in Liver Hepatocellular Carcinoma";
         for (i = 0; i < lihcData.length; i++) {
             console.log(lihcData[i]);
             drawGeneDistro(lihcData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
         plots("TCGA-LIHC");
     });
     kidney.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Kidney Renal Clear Cell Carcinoma";
+        label.innerHTML = "Upregulated genes in Kidney Renal Clear Cell Carcinoma";
         for (i = 0; i < kircData.length; i++) {
             console.log(kircData[i]);
             drawGeneDistro(kircData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
         plots("TCGA-KIRC");
     });
     breast.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Breast Invasive Carcinoma";
+        label.innerHTML = "Upregulated genes in Breast Invasive Carcinoma";
         for (i = 0; i < brcaData.length; i++) {
             console.log(brcaData[i]);
             drawGeneDistro(brcaData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
         plots("TCGA-BRCA");
     });
     colon.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Colon Adenocarcinoma";
+        label.innerHTML = "Upregulated genes in Colon Adenocarcinoma";
         for (i = 0; i < coadData.length; i++) {
             console.log(coadData[i]);
             drawGeneDistro(coadData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
         plots("TCGA-COAD");
     });
     prostate.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Upregulated genes in Prostate Adenocarcinoma";
+        label.innerHTML = "Upregulated genes in Prostate Adenocarcinoma";
         for (i = 0; i < pradData.length; i++) {
             console.log(pradData[i]);
             drawGeneDistro(pradData[i]);
-        };
+        }
+        ;
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "20");
 
         plots("TCGA-PRAD");
@@ -202,7 +211,7 @@ function addListeners() {
 }
 
 function clearHighlight() {
-    infobox.innerHTML = "";
+    infobox.innerHTML = "<div class=\"vertical-text\">FPKM<br><p style=\"font: 10pt Arial;\">Fragments Per Kilobase of transcript per Million mapped reads</p></div>";
     d3.select(skin).attr("stroke", "none");
     d3.select(brain).attr("stroke", "none");
     d3.select(lungs).attr("stroke", "none");
@@ -295,7 +304,7 @@ function drawGeneDistro(cancer) {
 // label
     svg.append("text")
             .attr("transform",
-                    "translate(" + ((width  + 20)/ 2) + " ," +
+                    "translate(" + ((width + 20) / 2) + " ," +
                     (height - margin.top + 25) + ")")
             .attr("class", "label")
             .style("text-anchor", "middle")
