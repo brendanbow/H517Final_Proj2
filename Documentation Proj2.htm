@@ -22,16 +22,16 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Christian Udu</o:Author>
   <o:LastAuthor>Christian Udu</o:LastAuthor>
-  <o:Revision>3</o:Revision>
-  <o:TotalTime>227</o:TotalTime>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>228</o:TotalTime>
   <o:Created>2019-12-11T22:22:00Z</o:Created>
-  <o:LastSaved>2019-12-11T22:32:00Z</o:LastSaved>
+  <o:LastSaved>2019-12-11T22:49:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>1075</o:Words>
-  <o:Characters>6130</o:Characters>
-  <o:Lines>51</o:Lines>
+  <o:Words>1098</o:Words>
+  <o:Characters>6264</o:Characters>
+  <o:Lines>52</o:Lines>
   <o:Paragraphs>14</o:Paragraphs>
-  <o:CharactersWithSpaces>7191</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>7348</o:CharactersWithSpaces>
   <o:Version>15.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -67,6 +67,7 @@ href="Documentation%20Proj2_files/colorschememapping.xml">
    <w:DontFlipMirrorIndents/>
    <w:OverrideTableStyleHps/>
   </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
   <m:mathPr>
    <m:mathFont m:val="Cambria Math"/>
    <m:brkBin m:val="before"/>
@@ -712,9 +713,6 @@ span.GramE
 	mso-fareast-theme-font:minor-latin;
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:major-bidi;}
-.MsoPapDefault
-	{mso-style-type:export-only;
-	line-height:200%;}
 @page WordSection1
 	{size:8.5in 11.0in;
 	margin:1.0in 1.0in 1.0in 1.0in;
@@ -738,7 +736,6 @@ div.WordSection1
 	mso-padding-alt:0in 5.4pt 0in 5.4pt;
 	mso-para-margin:0in;
 	mso-para-margin-bottom:.0001pt;
-	line-height:200%;
 	mso-pagination:widow-orphan;
 	font-size:12.0pt;
 	mso-bidi-font-size:16.0pt;
@@ -780,32 +777,34 @@ cancers that are easily identifiable and are common from person to person. From
 the list of cancers, we selected the following cancer organs: brain, lung,
 breast, liver, stomach, kidney, colon/large intestine, and testes. In order to
 visualize our cancer organs, we decided to utilize an SVG androgynous human
-body, which was found on <span class=SpellE>codepen</span> (source). The body
-contained some organ parts of the body initially so the elements of the body
-were needed to be hard coded out. This process left the hollow shell of the
-body which was essentially the skin. Next we wanted to figure out how to
-visualize the organs. Brandon found a great source on <span class=MsoHyperlink><a
-href="http://www.flaticon.com">www.flaticon.com</a></span>, created by <span
-class=SpellE>Eucalyp</span>, which has standard SVG organ segments that we can
-choose from. This is a great tool to use on expansion of this work because
-there a variety of cancers that were not included in this visualization. Having
-too many organs may hinder the interactivity with the body. Because of this, we
-only included 9 organs to show in this visualization. With this in mind, we
-have created our 9 cancer organs and have matching genes that go along with the
-lung. Using the source for our body, the outline segments of organs were
-resized, recolored, and placed as anatomically accurate as possible. While
-there are overlaps that occur from one body part to another, we looked trying
-to make the visualization as intuitive as possible. The colors on their own
-have no meaning on their own but they do provide some differentiation from
-other body parts. For the colorblind, the color channel would not hinder their
-understanding of the figure. The body was created with the organs in place and
-were ready to be paired with the incoming data. The organs themselves were
-initially placed to be hover events as shown below:<o:p></o:p></span></p>
+body, which was found on <span class=SpellE>codepen</span> (<a
+href="https://codepen.io/onur_kaplan/pen/XaWeNK">https://codepen.io/onur_kaplan/pen/XaWeNK</a>).
+The body contained some organ parts of the body initially so the elements of
+the body were needed to be hard coded out. This process left the hollow shell
+of the body which was essentially the skin. To make best use of our <span
+class=GramE>vis</span>, we only implemented from torso up. Next we wanted to
+figure out how to visualize the organs. Brandon found a great source on <span
+class=MsoHyperlink><a href="http://www.flaticon.com">www.flaticon.com</a></span>,
+created by <span class=SpellE>Eucalyp</span>, which has standard SVG organ
+segments that we can choose from. This is a great tool to use on expansion of
+this work because there a variety of cancers that were not included in this
+visualization. Having too many organs may hinder the interactivity with the
+body. Because of this, we only included 9 organs to show in this visualization.
+With this in mind, we have created our 9 cancer organs and have matching genes
+that go along with the lung. Using the source for our body, the outline
+segments of organs were resized, recolored, and placed as anatomically accurate
+as possible. While there are overlaps that occur from one body part to another,
+we looked trying to make the visualization as intuitive as possible. The colors
+on their own have no meaning on their own but they do provide some
+differentiation from other body parts. For the colorblind, the color channel
+would not hinder their understanding of the figure. The body was created with
+the organs in place and were ready to be paired with the incoming data. The
+organs themselves were initially placed to be hover events as shown below:<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
- coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
- filled="f" stroked="f">
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
  <v:formulas>
   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
@@ -823,11 +822,13 @@ mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shapetype id="_x00
  </v:formulas>
  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
  <o:lock v:ext="edit" aspectratio="t"/>
-</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:577.5pt;
- height:427.5pt'>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1032" type="#_x0000_t75"
+ alt="initial body" style='width:577.5pt;height:427.5pt;visibility:visible;
+ mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image001.png" o:title="initial body"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=770 height=570
-src="Documentation%20Proj2_files/image001.png" v:shapes="_x0000_i1025"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image001.png" alt="initial body" v:shapes="Picture_x0020_1"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>Seeing
@@ -844,16 +845,19 @@ NIH approval to <span class=SpellE>Vidhur</span> to use in our analysis. The
 first set of excel documents were showing the genetic factor, which is a
 quantifiable number of genetic risk on a particular gene given the individuals
 have predisposition for cancer. Much of the data was used to create box plots
-as it will be mentioned shortly. The code identifiers for each individual (first
-were not used in our <span class=GramE>vis</span>. The top genes excel file was
-shown below.<o:p></o:p></span></p>
+as it will be mentioned shortly. The code identifiers for each individual
+(first were not used in our <span class=GramE>vis</span>. The top genes excel
+file was shown below.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1026"
- type="#_x0000_t75" style='width:712.5pt;height:417.75pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_2" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Top Gene Dataset Photo"
+ style='width:712.5pt;height:417.75pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image002.png" o:title="Top Gene Dataset Photo"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=950 height=557
-src="Documentation%20Proj2_files/image002.png" v:shapes="_x0000_i1026"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image002.png" alt="Top Gene Dataset Photo"
+v:shapes="Picture_x0020_2"><![endif]></span><span style='mso-bidi-font-size:
+12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>The
@@ -861,11 +865,13 @@ next set of excel files were the demographic data. The data showed each
 individual patient paired with particular demographic data from below:<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1027"
- type="#_x0000_t75" style='width:822pt;height:391.5pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_i1030" type="#_x0000_t75" alt="Raw Data of Demog"
+ style='width:822pt;height:391.5pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image003.png" o:title="Raw Data of Demog"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1096 height=522
-src="Documentation%20Proj2_files/image004.png" v:shapes="_x0000_i1027"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image004.png" alt="Raw Data of Demog" v:shapes="Picture_x0020_3"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>While
@@ -881,26 +887,30 @@ cancer. The data itself was intuitive to use the few identifiers and were
 combined into a single document shown below:<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1028"
- type="#_x0000_t75" style='width:840pt;height:383.25pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_4" o:spid="_x0000_i1029" type="#_x0000_t75" alt="Compiled Data"
+ style='width:840pt;height:383.25pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image005.png" o:title="Compiled Data"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1120 height=511
-src="Documentation%20Proj2_files/image006.png" v:shapes="_x0000_i1028"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image006.png" alt="Compiled Data" v:shapes="Picture_x0020_4"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>To
-create the visualization itself, we came together to formulate a plan. The initial
-tactic was to formulate a visualization that included a good majority of the
-plots, including adjustment measures such as t and m measurements. The data
-would include many demographical data and would give itself a decent looking
-visualization if done correctly. The schematic is shown below:<o:p></o:p></span></p>
+create the visualization itself, we came together to formulate a plan. The
+initial tactic was to formulate a visualization that included a good majority
+of the plots, including adjustment measures such as t and m measurements. The
+data would include many demographical data and would give itself a decent
+looking visualization if done correctly. The schematic is shown below:<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1029"
- type="#_x0000_t75" style='width:816.75pt;height:603pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_5" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Initial vis"
+ style='width:816.75pt;height:603pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image007.jpg" o:title="Initial vis"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1089 height=804
-src="Documentation%20Proj2_files/image008.jpg" v:shapes="_x0000_i1029"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image008.jpg" alt="Initial vis" v:shapes="Picture_x0020_5"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>However,
@@ -910,25 +920,32 @@ only create a more concrete visualization, but also allow us to answer key
 questions about our <span class=GramE>vis</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1030"
- type="#_x0000_t75" style='width:840pt;height:610.5pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_6" o:spid="_x0000_i1027" type="#_x0000_t75" alt="second vis"
+ style='width:840pt;height:610.5pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image009.jpg" o:title="second vis"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1120 height=814
-src="Documentation%20Proj2_files/image010.jpg" v:shapes="_x0000_i1030"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image010.jpg" alt="second vis" v:shapes="Picture_x0020_6"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1031"
- type="#_x0000_t75" style='width:844.5pt;height:459.75pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_7" o:spid="_x0000_i1026" type="#_x0000_t75" alt="graphs in vis"
+ style='width:844.5pt;height:459.75pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image011.jpg" o:title="graphs in vis"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1126 height=613
-src="Documentation%20Proj2_files/image012.jpg" v:shapes="_x0000_i1031"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image012.jpg" alt="graphs in vis" v:shapes="Picture_x0020_7"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
-mso-bidi-font-family:"Times New Roman"'><!--[if gte vml 1]><v:shape id="_x0000_i1032"
- type="#_x0000_t75" style='width:844.5pt;height:474.75pt'>
+mso-bidi-font-family:"Times New Roman";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_8" o:spid="_x0000_i1025" type="#_x0000_t75" alt="c54ff1d4-211f-4add-a7b6-4089ff6a61ae"
+ style='width:844.5pt;height:474.75pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="Documentation%20Proj2_files/image013.jpg" o:title="c54ff1d4-211f-4add-a7b6-4089ff6a61ae"/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=1126 height=633
-src="Documentation%20Proj2_files/image014.jpg" v:shapes="_x0000_i1032"><![endif]><o:p></o:p></span></p>
+src="Documentation%20Proj2_files/image014.jpg"
+alt=c54ff1d4-211f-4add-a7b6-4089ff6a61ae v:shapes="Picture_x0020_8"><![endif]></span><span
+style='mso-bidi-font-size:12.0pt;line-height:200%;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-size:12.0pt;line-height:200%;
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>To
@@ -949,24 +966,24 @@ The color differentiates well for all variables as it is colorblind friendly. <o
 mso-bidi-font-family:"Times New Roman"'><span style='mso-tab-count:1'>            </span>Given
 our use of these graphs we were able to answer some key questions about our
 visualizations. The demographic data is appropriately paired with the data
-shown on occurrence of data, which can open up data exploration on certain
-genetic disposition in particular patient demographics. By the use of this
-tool, it answers the efficacy of its use by non-experts. While the genetic
-component is beyond the scope of a regular user, a normal individual can
-intuitively understand the basic information about each cancer. While there
-would be signs providing instructions in how to interact, it would be useful
-for the individual to explore differences between cancer types and their
-malignancy. We are not yet able to give an interaction that would explore
-sub-types of cancers, but it is certainly obtainable using this framework. From
-a researcher’s standpoint, this tool is easy to use to pose testable
-hypothesis, especially in <span class=SpellE>biostatistical</span> analyses.
-The expression could be expressed in a different way but the message of the
-visualization shines through. Clinicians could effectively give better
-judgement about their existing beliefs and even pursue demographic specific
-interventions to tackle cancer related issues. With our future direction, we
-would love to expand this data even more than before by including more organ
-cancers and using two sided model (<span class=SpellE>eg</span>. One of the two
-lungs) to include more cancer types. <o:p></o:p></span></p>
+shown on occurrence of data, which can open up data exploration on certain genetic
+disposition in particular patient demographics. By the use of this tool, it
+answers the efficacy of its use by non-experts. While the genetic component is
+beyond the scope of a regular user, a normal individual can intuitively
+understand the basic information about each cancer. While there would be signs
+providing instructions in how to interact, it would be useful for the
+individual to explore differences between cancer types and their malignancy. We
+are not yet able to give an interaction that would explore sub-types of
+cancers, but it is certainly obtainable using this framework. From a
+researcher’s standpoint, this tool is easy to use to pose testable hypothesis,
+especially in <span class=SpellE>biostatistical</span> analyses. The expression
+could be expressed in a different way but the message of the visualization
+shines through. Clinicians could effectively give better judgement about their
+existing beliefs and even pursue demographic specific interventions to tackle
+cancer related issues. With our future direction, we would love to expand this
+data even more than before by including more organ cancers and using two sided
+model (<span class=SpellE>eg</span>. One of the two lungs) to include more
+cancer types. <o:p></o:p></span></p>
 
 </div>
 
