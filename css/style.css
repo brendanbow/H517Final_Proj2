@@ -9,7 +9,7 @@ and open the template in the editor.
 body {
     font: 12pt Arial;
     color: #000000;
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
 }
 
 .pane{
