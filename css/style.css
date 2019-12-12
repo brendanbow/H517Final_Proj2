@@ -48,6 +48,8 @@ body {
 .vertical-text {
     font-weight: bold;
     transform: rotate(270deg);
-    /*transform-origin: left top 0;*/
+    transform-origin: bottom;
     float: right;
+    height: 100px;
+    width: 150px;
 }

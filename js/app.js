@@ -211,7 +211,7 @@ function addListeners() {
 }
 
 function clearHighlight() {
-    infobox.innerHTML = "<div class=\"vertical-text\">FPKM<br><p style=\"font: 10pt Arial;\">Fragments Per Kilobase of transcript per Million mapped reads</p></div>";
+    infobox.innerHTML = "<div class=\"vertical-text\">FPKM<br><p style=\"font: 10pt Arial;\">Fragments/Kilobase of transcript/Million mapped reads</p></div>";
     d3.select(skin).attr("stroke", "none");
     d3.select(brain).attr("stroke", "none");
     d3.select(lungs).attr("stroke", "none");
