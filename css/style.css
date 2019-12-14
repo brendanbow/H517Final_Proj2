@@ -26,6 +26,8 @@ body {
     display: flex;
     justify-content: space-between;
     width: 72%;
+    /*transform: scale(0.75);*/
+    transform: translateX(-65px)
 }
 
 .label {
@@ -47,9 +49,16 @@ body {
 
 .vertical-text {
     font-weight: bold;
-    transform: rotate(270deg);
+    text-align: center;
     transform-origin: bottom;
     float: right;
     height: 100px;
     width: 150px;
+    transform: translateX(70px) translateY(-25px) rotate(270deg);
+}
+
+#clinicalbox {
+    transform: scale(0.75);
+    /*    zoom: 0.75;
+    -moz-transform: scale(0.75);*/
 }

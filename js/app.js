@@ -96,7 +96,7 @@ function addListeners() {
 
 
     body = document.getElementById('humanInner');
-    skin = document.getElementById('skin');
+    total = document.getElementById('skin');
     brain = document.getElementById('brain');
     lungs = document.getElementById('lungs');
     stomach = document.getElementById('stomach');
@@ -112,9 +112,12 @@ function addListeners() {
     body.addEventListener('click', function (e) {
         //console.log("this is the body");
     });
-    skin.addEventListener('click', function (e) {
+    total.addEventListener('click', function (e) {
         clearHighlight();
-        infobox.innerHTML = "Melanoma data not available.";
+        plots(1);
+        d3.select(this).attr("stroke", "gold").attr("stroke-width", "3");
+        label.innerHTML = "";
+        infobox.innerHTML = "<p> Click on an organ to see a sample of upregulated genes in the selected organ's cancer. <br> Below currently displays information on all cancer in our data set, but will display a series of clinical information on demographic information per specific organ cancer.</p>";
     });
     brain.addEventListener('click', function (e) {
         clearHighlight();
@@ -207,11 +210,13 @@ function addListeners() {
 
         plots("TCGA-PRAD");
     });
+    plots(1);
+    d3.select(total).attr("stroke", "gold").attr("stroke-width", "3");
 
 }
 
 function clearHighlight() {
-    infobox.innerHTML = "<div class=\"vertical-text\">FPKM<br><p style=\"font: 10pt Arial;\">Fragments/Kilobase of transcript/Million mapped reads</p></div>";
+    infobox.innerHTML = "<div class=\"vertical-text\"><p style=\"font: 10pt Arial;\">Fragments/Kilobase of transcript/Million mapped reads</p>FPKM</div>";
     d3.select(skin).attr("stroke", "none");
     d3.select(brain).attr("stroke", "none");
     d3.select(lungs).attr("stroke", "none");
@@ -228,7 +233,7 @@ function drawGeneDistro(cancer) {
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 10, bottom: 10, left: 40},
             width = 100 - margin.left - margin.right,
-            height = 200 - margin.top - margin.bottom;
+            height = 150 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
     var svg = d3.select("#infobox")

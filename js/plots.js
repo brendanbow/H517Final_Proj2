@@ -18,7 +18,7 @@ function plots(key){
         let tumorReport = [0,0,0,0,0]
 
         data.forEach(function(l_data){
-            if(l_data.project_id == key)
+            if((l_data.project_id == key) || (key == 1))
             {
                 if(parseInt(l_data.age_at_index) <= 20)
                 {
