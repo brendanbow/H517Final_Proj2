@@ -107,10 +107,35 @@ function addListeners() {
     prostate = document.getElementById('prostate');
     infobox = document.getElementById('infobox');
     label = document.getElementById('label');
+    tooltip = document.getElementById('tooltiptext');
 
 
-    body.addEventListener('click', function (e) {
-        //console.log("this is the body");
+    total.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Overview";
+    });
+    brain.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Brain";
+    });
+    lungs.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Lungs";
+    });
+    stomach.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Stomach";
+    });
+    liver.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Liver";
+    });
+    kidney.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Kidney";
+    });
+    breast.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Breast";
+    });
+    colon.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Colon";
+    });
+    prostate.addEventListener('mouseenter', function (e) {
+        tooltip.innerHTML = "Prostate";
     });
     total.addEventListener('click', function (e) {
         clearHighlight();
@@ -134,7 +159,7 @@ function addListeners() {
     lungs.addEventListener('click', function (e) {
         clearHighlight();
         infobox.innerHTML = "";
-        label.innerHTML = "";
+        label.innerHTML = "Lung gene distribution unavailable at this time.";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
 
     });

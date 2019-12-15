@@ -23,7 +23,8 @@ and open the template in the editor.
             <hr>
         </div>
         <div class="pane">
-            <div id="humanForm">
+            <div id="humanForm" class="tooltip">
+               <span class="tooltiptext" id="tooltiptext">Tooltip text</span>
                 <svg version="1.1" id="humanAnatomy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="350px" height="500px" viewBox="0 0 350 260" enable-background="new 0 0 420 780" xml:space="preserve">
                 <g id="humanInner" transform="translate(-40,-125)">
                 <!--skin-->
@@ -428,7 +429,7 @@ and open the template in the editor.
 
         </div>
 
-        <div>
+        <div style="height: 500px">
             <!--<div id="label" class="container">-->
             <div id="label">
             </div>
@@ -442,11 +443,13 @@ and open the template in the editor.
             <div id="clinicalbox" class="container">
                 <div class = "row">
                     <svg id="clinicalbox_svg"></svg>
+                    <svg id="clinicalboxtumor_svg"></svg>
+                </div>
+                <div class = "row">
                     <svg id="clinicalpie_svg"></svg>
                     <svg id="clinicalpierace_svg"></svg>
                 </div>
                 <div class = "row">
-                    <svg id="clinicalboxtumor_svg"></svg>
                     <svg id="clinicalpievital_svg"></svg>
                     <svg id="clinicalpiemalign_svg"></svg>
                 </div>
