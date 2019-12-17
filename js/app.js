@@ -161,7 +161,7 @@ function addListeners() {
         infobox.innerHTML = "";
         label.innerHTML = "Lung gene distribution unavailable at this time.";
         d3.select(this).attr("stroke", "gold").attr("stroke-width", "10");
-
+        plots("lung");
     });
     stomach.addEventListener('click', function (e) {
         clearHighlight();
